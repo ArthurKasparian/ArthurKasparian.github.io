@@ -1,0 +1,110 @@
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@font-face {
+    font-family: Sansation;
+    src: url("res/fonts/Sansation_Regular.woff");
+    font-weight: normal;
+}
+@font-face {
+    font-family: Sansation;
+    src: url("res/fonts/Sansation_Bold.woff");
+    font-weight: bold;
+}
+
+header {
+    width: 100%;
+    height: 6vh;
+    background-color: #CBD5D8;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#name {
+    margin: 0 3% 0 3%;
+    height: 60%;
+
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header a:hover {
+    text-shadow:1px 1px 10px #fff, 1px 1px 10px #B8916C;
+}
+
+header h5 {
+    font-family: Sansation, sans-serif;
+    font-weight: bold;
+    font-size: 1.4em;
+    color: #B8916C;
+
+    margin: 0;
+}
+
+header #inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    flex: 1;
+
+    height: 60%;
+    border-radius: 0.4em;
+
+    background-color: white;
+}
+
+@font-face {
+    font-family: Asap;
+    src: url("res/fonts/Asap_SemiExpanded-Medium.woff");
+    font-weight: bold;
+}
+
+header #inner a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Asap, sans-serif;
+    font-weight: bold;
+
+    flex: 1;
+    height: 100%;
+    text-align: center;
+
+    -webkit-transition: background 350ms;
+    transition: background 350ms;
+}
+
+header #inner a:hover {
+    background-color: #ECD5A9;
+}
+
+header #lang {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin: 0 2% 0 2%;
+
+    height: 60%;
+    aspect-ratio: 1 / 1;
+}
+
+nav a, nav a:active, nav a:hover, nav a:visited {
+    text-decoration: none;
+    color: black;
+    cursor: default;
+}

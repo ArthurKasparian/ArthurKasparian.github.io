@@ -1,0 +1,21 @@
+@font-face {
+    font-family: Quicksand;
+    src: url("/res/fonts/Quicksand-Bold.woff");
+    font-weight: bold;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Quicksand, sans-serif;
+    font-weight: bold;
+    font-size: 400%;
+    color: #2E2D2C;
+
+    background-color: #D3ECF4;
+}

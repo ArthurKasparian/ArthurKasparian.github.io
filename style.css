@@ -104,6 +104,7 @@ h2 {
 }
 
 .old, .new {
+    -webkit-transition: opacity 0.2s linear;
     transition: opacity 0.2s linear;
 }
 
