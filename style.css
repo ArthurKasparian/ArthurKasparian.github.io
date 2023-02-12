@@ -1,16 +1,55 @@
+:root {
+    --background: #D3ECF4;
+    --onBackground: #000000;
+
+    --card: #94C2D0;
+    --onCard: #000000;
+    --cardHover: #ECD5A9;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #2E2D2C;
+        --onBackground: #B8916C;
+
+        --card: #477A8A;
+        --onCard: #EBFAFF;
+        --cardHover: #B8916C;
+    }
+}
+
+@font-face {
+    font-family: Quicksand;
+    src: url("res/fonts/Quicksand-Medium.woff");
+    font-weight: normal;
+}
+@font-face {
+    font-family: Quicksand;
+    src: url("res/fonts/Quicksand-Bold.woff");
+    font-weight: bold;
+}
+@font-face {
+    font-family: Markazi;
+    src: url("res/fonts/MarkaziText-Medium.woff");
+    font-weight: normal;
+}
+@font-face {
+    font-family: Raleway;
+    font-weight: normal;
+    src: url("res/fonts/Raleway-SemiBold.woff");
+}
+
 body {
     margin: 0;
     width: 100vw;
     height: 100vh;
 
-    background-color: #D3ECF4;
+    background-color: var(--background);
 
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
-
 main {
     margin: 0;
     width: 100%;
@@ -22,18 +61,6 @@ main {
     align-items: center;
 }
 
-@font-face {
-    font-family: Quicksand;
-    src: url("res/fonts/Quicksand-Medium.woff");
-    font-weight: normal;
-}
-
-@font-face {
-    font-family: Quicksand;
-    src: url("res/fonts/Quicksand-Bold.woff");
-    font-weight: bold;
-}
-
 #title {
     display: flex;
     flex-direction: column;
@@ -43,14 +70,13 @@ main {
     margin-bottom: 4rem;
 
     font-family: Quicksand, sans-serif;
+    color: var(--onBackground);
 }
-
 h1 {
     margin: 0;
     font-weight: bold;
     font-size: 250%;
 }
-
 h3 {
     margin: 0.5rem 0 0;
     font-weight: normal;
@@ -66,19 +92,13 @@ nav {
     width: 100%;
 }
 
-@font-face {
-    font-family: Markazi;
-    src: url("res/fonts/MarkaziText-Medium.woff");
-    font-weight: normal;
-}
-
 nav a {
-    background-color: #94C2D0;
+    background-color: var(--card);
 
     height: 100%;
     width: 20%;
 
-    border-radius: 0.3em;
+    border-radius: 0.5em;
 
     margin-right: 1.3rem;
     margin-left: 1.3rem;
@@ -91,7 +111,22 @@ nav a {
     transition: background 0.5s;
 }
 
-h2 {
+/* Second Button */
+nav a:nth-child(2) {
+    margin: 1.3rem;
+}
+
+nav a, nav a:active, nav a:hover, nav a:visited {
+    text-decoration: none;
+    color: var(--onCard);
+    cursor: default;
+}
+
+nav a:hover {
+    background-color: var(--cardHover);
+}
+
+nav a h2 {
     font-family: Markazi, Quicksand, sans-serif;
     font-weight: normal;
     font-size: 220%;
@@ -99,43 +134,22 @@ h2 {
     position: absolute;
 }
 
+
 .new {
     opacity: 0;
 }
-
+.old {
+    font-family: Raleway, sans-serif;
+    font-weight: normal;
+    font-size: 160%;
+}
 .old, .new {
     -webkit-transition: opacity 0.2s linear;
     transition: opacity 0.2s linear;
 }
-
 .wrap:hover .old {
     opacity: 0;
 }
 .wrap:hover .new {
     opacity: 1;
-}
-
-/* First Button */
-nav a:first-child {
-    margin-left: 0;
-}
-
-/* Second Button */
-nav a:nth-child(2) {
-
-}
-
-/* Third Button */
-nav a:last-child {
-    margin-right: 0;
-}
-
-nav a, nav a:active, nav a:hover, nav a:visited {
-    text-decoration: none;
-    color: black;
-    cursor: default;
-}
-
-nav a:hover {
-    background-color: #ECD5A9;
 }

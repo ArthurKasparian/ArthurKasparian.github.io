@@ -1,13 +1,9 @@
-body {
-    margin: 0;
-    width: 100vw;
-    height: 100vh;
-
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
+:root {
+    --headerAccent: #B8916C;
 }
+/*
+Surface, Background & onBackground come from content CSS file (website.css, blog.css, portfolio.css), this helps in keeping the colouring consistent
+*/
 
 @font-face {
     font-family: Sansation;
@@ -23,11 +19,16 @@ body {
 header {
     width: 100%;
     height: 6vh;
-    background-color: #CBD5D8;
+    background-color: var(--surface);
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 #name {
@@ -40,15 +41,16 @@ header {
     align-items: center;
 }
 
-header a:hover {
-    text-shadow:1px 1px 10px #fff, 1px 1px 10px #B8916C;
+#name:hover, .outer:hover {
+    text-shadow:1px 1px 10px var(--surface), 1px 1px 10px var(--headerAccent);
+    cursor: pointer;
 }
 
 header h5 {
     font-family: Sansation, sans-serif;
     font-weight: bold;
     font-size: 1.4em;
-    color: #B8916C;
+    color: var(--headerAccent);
 
     margin: 0;
 }
@@ -63,7 +65,7 @@ header #inner {
     height: 60%;
     border-radius: 0.4em;
 
-    background-color: white;
+    background-color: var(--background);
 }
 
 @font-face {
@@ -79,17 +81,21 @@ header #inner a {
 
     font-family: Asap, sans-serif;
     font-weight: bold;
+    color: var(--onBackground);
 
     flex: 1;
     height: 100%;
     text-align: center;
 
-    -webkit-transition: background 350ms;
-    transition: background 350ms;
+    border-radius: 0.3em;
+
+    -webkit-transition: background 350ms, color 350ms;
+    transition: background 350ms, color 350ms;
 }
 
 header #inner a:hover {
-    background-color: #ECD5A9;
+    background-color: var(--headerAccent);
+    color: var(--background);
 }
 
 header #lang {
@@ -101,10 +107,33 @@ header #lang {
 
     height: 60%;
     aspect-ratio: 1 / 1;
+
+    font-family: Sansation, sans-serif;
+    font-weight: normal;
+    font-size: 80%;
+    color: var(--headerAccent);
 }
 
 nav a, nav a:active, nav a:hover, nav a:visited {
     text-decoration: none;
-    color: black;
     cursor: default;
+}
+
+header #portfolio {
+    margin: 0 1.2% 0 2.5%;
+}
+
+.outer {
+    font-family: Raleway, sans-serif;
+    font-weight: bold;
+    color: var(--headerAccent);
+
+    text-decoration: none;
+    cursor: default;
+}
+
+@font-face {
+    font-family: Sansation;
+    font-weight: normal;
+    src: url("/res/fonts/Sansation_Regular.woff");
 }

@@ -1,25 +1,64 @@
-header {
-    position: fixed;
+:root {
+    --background: #FFFFFF;
+    --onBackground: #303A3D;
+    --backgroundVariant: #D3ECF4;
+    --onBackgroundVariant: #000000;
+
+    --surface: #CBD5D8;
+    --onSurface: #000000;
+
+    --primary: #94C2D0;
+    --onPrimary: #3F4445;
+
+    --accent: #B8916C;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #2E2D2C;
+        --onBackground: #B8916C;
+        --backgroundVariant: #2E2D2C;
+        --onBackgroundVariant: #B8916C;
+
+        --surface: #201F1E;
+        --onSurface: #CBD5D8;
+
+        --primary: #477A8A;
+        --onPrimary: #EBFAFF;
+
+        --accent: #B8916C;
+    }
 }
 
-main {
-    padding-top: 6vh;
+body {
+    margin: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background-color: var(--background);
+}
+
+header {
+    position: fixed;
 }
 
 p {
     margin: 0;
 }
 
-
-
 #top {
-    background-color: #CBD5D8;
+    background-color: var(--surface);
     width: 100%;
     height: 300px;
+
+    padding-top: 6vh;
 
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+svg {
+    fill: var(--surface);
 }
 
 @font-face {
@@ -31,6 +70,7 @@ p {
 #top p {
     font-family: Raleway, sans-serif;
     font-weight: bold;
+    color: var(--onSurface);
 }
 
 #greeting {

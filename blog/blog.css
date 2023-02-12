@@ -1,3 +1,14 @@
+:root {
+    --background: #D3ECF4;
+    --onBackground: #2E2D2C;
+}
+@media (prefers-color-scheme: dark) {
+    :root {
+        --background: #2E2D2C;
+        --onBackground: #B8916C;
+    }
+}
+
 @font-face {
     font-family: Quicksand;
     src: url("/res/fonts/Quicksand-Bold.woff");
@@ -8,14 +19,22 @@ body {
     margin: 0;
     height: 100vh;
 
+    font-family: Quicksand, sans-serif;
+    font-weight: bold;
+    font-size: 400%;
+    color: var(--onBackground);
+
+    background-color: var(--background);
+}
+
+a, a:active, a:hover, a:visited {
     display: flex;
     justify-content: center;
     align-items: center;
 
-    font-family: Quicksand, sans-serif;
-    font-weight: bold;
-    font-size: 400%;
-    color: #2E2D2C;
+    width: 100vw;
+    height: 100vh;
 
-    background-color: #D3ECF4;
+    text-decoration: none;
+    color: var(--onBackground);
 }
